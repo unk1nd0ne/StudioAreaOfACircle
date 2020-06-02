@@ -7,17 +7,20 @@ namespace StudioAreaOfACircle
     {
         private static void Main()
         {
-            double radius;
+            double radius = 0;
             double area;
             double circumference;
             double diameter;
             string input;
             double repetitions;
 
-
-            Console.Write("Enter a radius: ");
-            input = Console.ReadLine();
-            radius = double.Parse(input);
+            while (radius <= 0)
+            {
+                Console.Write("Enter a radius: ");
+                input = Console.ReadLine();
+                radius = double.Parse(input);
+            }
+            
             area = Circle.CalculateArea(radius);
             Console.WriteLine("The area of a circle of radius " + radius + " is: " + Math.Round(area, 3));
             circumference = Circle.CalculateCircumference(radius);
