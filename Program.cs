@@ -13,7 +13,7 @@ namespace StudioAreaOfACircle
             double diameter;
             string input;
             double mpg = 0;
-            double repetitions;
+            double gallonsOfGas;
 
             while (radius <= 0)
             {
@@ -43,9 +43,9 @@ namespace StudioAreaOfACircle
                 }
             }
 
-            repetitions = mpg / circumference;
+            gallonsOfGas = mpg / circumference;
 
-            Console.WriteLine("At " + mpg + " MPG, you can drive " + Math.Round(repetitions, 3) + " times around the circle.");
+            Console.WriteLine("At " + mpg + " MPG, you will use " + Math.Round(gallonsOfGas, 3) + " gallons of gas.");
 
         }
     }
