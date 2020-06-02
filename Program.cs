@@ -8,9 +8,6 @@ namespace StudioAreaOfACircle
         private static void Main()
         {
             double radius = 0;
-            double area;
-            double circumference;
-            double diameter;
             string input;
             double mpg = 0;
             double gallonsOfGas;
@@ -25,13 +22,9 @@ namespace StudioAreaOfACircle
                 }
             }
             
-            area = Circle.CalculateArea(radius);
-            circumference = Circle.CalculateCircumference(radius);
-            diameter = Circle.CalculateDiameter(radius);
-
-            Console.WriteLine("The area of a circle of radius " + radius + " is: " + Math.Round(area, 3));
+            Console.WriteLine("The area of a circle of radius " + radius + " is: " + Math.Round(Circle.CalculateArea(radius), 3));
             
-            Console.WriteLine("The circumference is: " + Math.Round(circumference, 3) + " and the diameter is: " + Math.Round(diameter, 3));
+            Console.WriteLine("The circumference is: " + Math.Round(Circle.CalculateCircumference(radius), 3) + " and the diameter is: " + Math.Round(Circle.CalculateDiameter(radius), 3));
 
             while (mpg <= 0)
             {
@@ -43,7 +36,7 @@ namespace StudioAreaOfACircle
                 }
             }
 
-            gallonsOfGas = circumference / mpg;
+            gallonsOfGas = Circle.CalculateCircumference(radius) / mpg;
 
             Console.WriteLine("At " + mpg + " MPG, you will use " + Math.Round(gallonsOfGas, 3) + " gallons of gas.");
 
