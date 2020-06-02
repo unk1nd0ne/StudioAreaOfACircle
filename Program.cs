@@ -26,10 +26,13 @@ namespace StudioAreaOfACircle
             }
             
             area = Circle.CalculateArea(radius);
-            Console.WriteLine("The area of a circle of radius " + radius + " is: " + Math.Round(area, 3));
             circumference = Circle.CalculateCircumference(radius);
             diameter = Circle.CalculateDiameter(radius);
+
+            Console.WriteLine("The area of a circle of radius " + radius + " is: " + Math.Round(area, 3));
+            
             Console.WriteLine("The circumference is: " + Math.Round(circumference, 3) + " and the diameter is: " + Math.Round(diameter, 3));
+
             while (mpg <= 0)
             {
                 Console.Write("Enter your MPG: ");
@@ -39,7 +42,9 @@ namespace StudioAreaOfACircle
                     Console.WriteLine("Please enter a number!");
                 }
             }
+
             repetitions = mpg / circumference;
+
             Console.WriteLine("At " + mpg + " MPG, you can drive " + Math.Round(repetitions, 3) + " times around the circle.");
 
         }
