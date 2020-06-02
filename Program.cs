@@ -43,7 +43,7 @@ namespace StudioAreaOfACircle
                 }
             }
 
-            gallonsOfGas = mpg / circumference;
+            gallonsOfGas = circumference / mpg;
 
             Console.WriteLine("At " + mpg + " MPG, you will use " + Math.Round(gallonsOfGas, 3) + " gallons of gas.");
 
