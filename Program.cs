@@ -12,13 +12,17 @@ namespace StudioAreaOfACircle
             double circumference;
             double diameter;
             string input;
+            double mpg = 0;
             double repetitions;
 
             while (radius <= 0)
             {
                 Console.Write("Enter a radius: ");
                 input = Console.ReadLine();
-                radius = double.Parse(input);
+                if (!double.TryParse(input, out radius))
+                {
+                    Console.WriteLine("Please enter a number!");
+                }
             }
             
             area = Circle.CalculateArea(radius);
@@ -26,10 +30,17 @@ namespace StudioAreaOfACircle
             circumference = Circle.CalculateCircumference(radius);
             diameter = Circle.CalculateDiameter(radius);
             Console.WriteLine("The circumference is: " + Math.Round(circumference, 3) + " and the diameter is: " + Math.Round(diameter, 3));
-            Console.Write("Enter you MPG: ");
-            input = Console.ReadLine();
-            repetitions = double.Parse(input) / circumference;
-            Console.WriteLine("At " + input + " MPG, you can drive " + Math.Round(repetitions, 3) + " times around the circle.");
+            while (mpg <= 0)
+            {
+                Console.Write("Enter your MPG: ");
+                input = Console.ReadLine();
+                if (!double.TryParse(input, out mpg))
+                {
+                    Console.WriteLine("Please enter a number!");
+                }
+            }
+            repetitions = mpg / circumference;
+            Console.WriteLine("At " + mpg + " MPG, you can drive " + Math.Round(repetitions, 3) + " times around the circle.");
 
         }
     }
